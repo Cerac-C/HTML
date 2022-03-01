@@ -1,0 +1,16 @@
+<script>
+  const xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET","https://api.ipify.org/?format=json&callback=getIP")
+  xmlHttp.send()
+  xmlHttp.onload = function () {
+    const dom = JSON.parse(this.responseText);
+    const dela = dom.ip;
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "https://ipapi.co/"+dela+"/json/");
+    xmlhttp.send();
+    xmlhttp.onload = function () {
+      const myObj = JSON.parse(this.responseText);
+      document.write("Country : "+myObj.country_name+"||||\n"+"City : "+myObj.city+"||||\n"+"Latitude : "+myObj.latitude+"||||\n"+"Longitude : "+myObj.longitude);
+    }
+  }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="location"></div>
+    <button onclick="getLocation()">زنم حدودی کجاست؟</button>
+
+    <script>
+      const div = document.getElementById("location");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(showPosition);
+        } else {
+          div.innerHTML = "The Browser Does not Support Geolocation";
+        }
+      }
+
+      function showPosition(position) {
+        window.open("https://www.google.com/maps/search/"+position.coords.latitude+"+"+position.coords.longitude,"_self")
+        //div.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
+
+    </script>
+  </body>
+</html>

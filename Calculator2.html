@@ -1,0 +1,30 @@
+<script>
+    while(1===1){
+    let firstNumberBackUp = prompt("Enter The First Number \nPress Enter To Exit");
+    if(firstNumberBackUp === ""){ break; }
+    let firstNumber = parseInt(firstNumberBackUp);
+    let operand = prompt("Enter The Operand \n +  -  *  /  rad  %  floor \nAre Allowed");
+        if (operand === '+') {
+            let secondNumber = parseInt(prompt("Enter The Second Number"));
+            alert(firstNumber + secondNumber);
+        } else if (operand === '-') {
+            let secondNumber = parseInt(prompt("Enter The Second Number"));
+            alert(firstNumber - secondNumber);
+        } else if (operand === '*') {
+            let secondNumber = parseInt(prompt("Enter The Second Number"));
+            alert(firstNumber * secondNumber);
+        } else if (operand === '/') {
+            let secondNumber = parseInt(prompt("Enter The Second Number"));
+            alert(firstNumber / secondNumber);
+        } else if (operand === '%') {
+            let secondNumber = parseInt(prompt("Enter The Second Number"));
+            alert(firstNumber % secondNumber);
+        } else if (operand === 'rad') {
+            alert(Math.sqrt(firstNumber));
+        } else if (operand === 'floor') {
+            alert(Math.floor(firstNumber));
+        } else {
+            alert("Wrong Input")
+        }
+    }
+</script>

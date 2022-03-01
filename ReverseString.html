@@ -1,0 +1,15 @@
+<script>
+    while(1===1){
+        let userInput = prompt().toString();
+        let array = userInput.split("")
+        let temp = "";
+        for(let i = 0; i < array.length/2 ; i++){
+            temp = array[i]
+            array[i] = array[array.length-1-i]  
+            array[array.length-1-i] = temp
+        }
+        alert(array.join(""))
+        //alert(prompt().toString().split("").reverse().join(""))
+    }                               
+</script>
+
